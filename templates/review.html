@@ -1,0 +1,25 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<div class="media">
+  <div class="media-body">
+    <h5 class="mt-0 mb-1"> {{ user[1] }}</h5>
+    {{ review[2] }}
+  </div>
+  <img src="{{ user[3] }}" class="ml-3" alt="...">
+</div>
+<h2> Коментарии </h2>
+<a href="/add_com/review[0]">написать коментарий</a><br>
+<ul class="list-unstyled">
+{% for item in coments %}
+    <li class="media">
+        <img src="{{ item[4] }}" class="mr-3" alt="...">
+        <div class="media-body">
+	  <h5 class="mt-0 mb-1">item[1]</h5>
+	    {{ item[2] }}
+	</div>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

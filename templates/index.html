@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<a href="/add_game">Добавить игру</a><br>
+{% for item in games %}
+    <div class="card">
+      <img class="card-img-top" src={{item[3]}} alt="Card image cap">
+      <div class="card-block">
+        <h4 href="/game/{{item[0]}}" class="card-title">{{item[1]}}</h4>
+      </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
